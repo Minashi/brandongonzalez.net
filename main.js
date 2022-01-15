@@ -2,12 +2,12 @@
 const path = require('path');
 const fs = require('fs');
 
-//var sslfilename = path.basename('D:/Documents/Microsoft VS Code/website/SSL')
+//var sslfilename = path.basename('D:/Documents/Microsoft VS Code/projectResume/SSL')
 
 
 // SSL KEY
-const privateKey = fs.readFileSync('D:/Documents/Microsoft VS Code/website/SSL/key.pem');
-const certificate = fs.readFileSync('D:/Documents/Microsoft VS Code/website/SSL/cert.pem');
+const privateKey = fs.readFileSync('D:/Documents/Microsoft VS Code/projectResume/SSL/key.pem');
+const certificate = fs.readFileSync('D:/Documents/Microsoft VS Code/projectResume/SSL/cert.pem');
 var credentials = {key: privateKey, cert: certificate};
 
 
@@ -15,14 +15,16 @@ var credentials = {key: privateKey, cert: certificate};
 const express = require('express');
 const https = require('https');
 const app = express();
-const _dirname = 'D:/Documents/Microsoft VS Code/website';
+const projectDir = 'D:/Documents/Microsoft VS Code/projectResume';
 const port = 443; //switch to port 443 after tests for security
+
+app.use(express.static(__dirname + '/public'));
 
 const server = https.createServer(credentials, app);
 
 // Route handling '/' request
 app.get('/', (req, res) => {
-    res.sendFile(path.join(_dirname, '/index.html'));
+    res.sendFile(path.join(projectDir, '/index.html'));
 });
 
 // Route handling '/about' request
