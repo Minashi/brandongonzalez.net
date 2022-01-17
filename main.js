@@ -1,8 +1,14 @@
-// Required Modules
+// Requiring Module --------------------------------
+const express = require('express');
+const https = require('https');
 const path = require('path');
 const fs = require('fs');
 
-//var sslfilename = path.basename('D:/Documents/Microsoft VS Code/projectResume/SSL')
+
+// Constants --------------------------------
+const projectDir = 'D:/Documents/Microsoft VS Code/projectResume';
+const port = 443; //switch to port 443 after tests for security
+const app = express();
 
 
 // SSL KEY --------------------------------
@@ -11,17 +17,8 @@ const certificate = fs.readFileSync('D:/Documents/Microsoft VS Code/projectResum
 var credentials = {key: privateKey, cert: certificate};
 
 
-// Requiring Module --------------------------------
-const express = require('express');
-const https = require('https');
-const helmet = require('helmet'); //middleware for security
-const app = express();
-const projectDir = 'D:/Documents/Microsoft VS Code/projectResume';
-const port = 443; //switch to port 443 after tests for security
-
+// Initialization --------------------------------
 app.use(express.static(__dirname + '/public')); //initate the use of all files in public
-app.use(helmet()); //initiate helmet
-
 const server = https.createServer(credentials, app); //create the server using https and SSL
 
 
@@ -38,6 +35,9 @@ app.get('/about', (req, res) => {
 
 
 // security stuff --------------------------------
+const helmet = require('helmet'); //middleware for security
+app.use(helmet()); //initiate helmet
+
 // Don't use default session cookie name, default session cookie name can be used to fingerprint
 // the server and target attacks
 var session = require('express-session'); //middleware to avoid this
@@ -87,7 +87,7 @@ app.use(session({
 
 
 // Server setup --------------------------------
-//listen for request on port 8080, and as a callback function have the port listened on logged
+//listen for request on port 443, and as a callback function have the port listened on logged
 server.listen(port, () => {
     console.log('server listening on port ' + port);
 });
