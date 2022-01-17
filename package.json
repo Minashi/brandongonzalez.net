@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Minashi/projectResume#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "helmet": "^5.0.1"
   }
 }
