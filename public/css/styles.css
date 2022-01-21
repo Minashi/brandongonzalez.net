@@ -1,7 +1,58 @@
+div {
+    height: 400px;
+    width: 800px;
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -400px;
+}
+
 body {
-    background-color: rgb(174,223,238);
+     background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 96%); 
 }
 
 h1 {
-    color: beige;
+    font-family: 'bdp clien', sans-serif;
+    font-size: 70px;
+    font-weight: 300;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+hr {
+    border-top: 1px solid black;
+    border-bottom: 0px;
+    width: 350px;
+}
+
+h2 {
+    font-size: 40px;
+    color: black;
+}
+
+p {
+    letter-spacing: 5px;
+}
+
+a {
+    font-size: 35px;
+    
+ }
+
+a:visited { 
+ text-decoration: none; 
+ color: black; 
+}
+
+p3 {
+    font-size: 20px;
+}  
+
+p4 {
+    font-size: 20px;
 }

@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/Minashi/projectResume#readme",
   "dependencies": {
+    "cookie-session": "^2.0.0",
     "express": "^4.17.2",
     "express-session": "^1.17.2",
-    "helmet": "^5.0.1"
+    "helmet": "^5.0.1",
+    "helmet-csp": "^3.4.0"
   }
 }

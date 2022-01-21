@@ -1,28 +1,26 @@
-#!/usr/bin/env node
 // Requiring Module --------------------------------
 const express = require('express');
-const http = require('http');
 const https = require('https');
 const path = require('path');
 const fs = require('fs');
 
 
 // Constants --------------------------------
-const projectDir = '/home/minashi/projectResume';
-const unSecurePort = 80;
+const projectDir = '/home/projectResume';
+const unsecurePort = 80;
 const securePort = 443; //switch to port 443 after tests for security
 const app = express();
 
 
 // SSL KEY --------------------------------
-const privateKey = fs.readFileSync('/home/minashi/projectResume/SSL/key.pem');
-const certificate = fs.readFileSync('/home/minashi/projectResume/SSL/cert.pem');
+const privateKey = fs.readFileSync('/home/e/SSL/key.pem');
+const certificate = fs.readFileSync('D:/Documents/Microsoft VS Code/projectResume/SSL/cert.pem');
 var credentials = {key: privateKey, cert: certificate};
 
 
 // Initialization --------------------------------
 app.use(express.static(__dirname + '/public')); //initate the use of all files in public
-
+const server = https.createServer(credentials, app); //create the server using https and SSL
 
 
 // Routing/pathways --------------------------------
@@ -44,22 +42,22 @@ const helmet = require('helmet'); //middleware for security
 app.use(helmet()); //initiate helmet
 
 // create a whitelist for helmet to stop errors of website connecting to other sites
-//const csp = require('helmet-csp');
-//app.use(csp({
-//    defaultSrc: ['self', 'fonts.googleapis.com']
+const csp = require('helmet-csp');
+app.use(csp({
+    defaultSrc: ['self', 'fonts.googleapis.com']
     //scriptSrc
     //fontSrc
     //styleSrc
-//}))
+}))
 
 // Don't use default session cookie name, default session cookie name can be used to fingerprint
 // the server and target attacks
-//var session = require('express-session'); //middleware to avoid this
-//app.set('trust proxy', 1); // trust first proxy
-//app.use(session({
-//    secret: 's3Cur3', //?
-//    name: 'sessionId'
-//}))
+var session = require('express-session'); //middleware to avoid this
+app.set('trust proxy', 1); // trust first proxy
+app.use(session({
+    secret: 's3Cur3', //?
+    name: 'sessionId'
+}))
 
 // set cookie security options to enhance security
 //secure - Ensures the browser only sends the cookie over HTTPS.
@@ -67,20 +65,20 @@ app.use(helmet()); //initiate helmet
 //domain - indicates the domain of the cookie; use it to compare against the domain of the server in which the URL is being requested. If they match, then check the path attribute next.
 //path - indicates the path of the cookie; use it to compare against the request path. If this and domain match, then send the cookie in the request.
 //expires - use to set expiration date for persistent cookies.
-//var session = require('cookie-session');
+var session = require('cookie-session');
 
-//var expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
-//app.use(session({
-//    name: 'session',
-//    keys: ['key1', 'key2'], //keys
-//    cookie: {
-//        secure:true,
-//        httpOnly:true,
-//        domain: "example.com", // change
-//        path: 'foo/bar', //change
-//        expires: expiryDate
-//    }
-//}))
+var expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
+app.use(session({
+    name: 'session',
+    keys: ['key1', 'key2'], //keys
+    cookie: {
+        secure:true,
+        httpOnly:true,
+        domain: "example.com", // change
+        path: 'foo/bar', //change
+        expires: expiryDate
+    }
+}))
 
 //Prevent brute-force attacks against authorization
 //Make sure login endpoints are protected to make private data more secure.
@@ -100,18 +98,8 @@ app.use(helmet()); //initiate helmet
 //https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS
 
 
-//const server;
-if (true){
-      app.listen(unSecurePort);
-}
-//else {
-//      server = https.createServer(credentials, app); //create the server using https and SSL
-//
-
-
 // Server setup --------------------------------
 //listen for request on port 443, and as a callback function have the port listened on logged
-//server.listen(unSecurePort, () => {
-//    console.log('server listening on port ' + unSecurePort);
-//});
-//}
+server.listen(securePort, () => {
+    console.log('server listening on port ' + securePort);
+});
