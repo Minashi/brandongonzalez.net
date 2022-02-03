@@ -1,0 +1,12 @@
+open 207.246.113.10
+
+username
+password
+
+binary
+
+mput D:\Documents\MicrosoftVSCode\projectResumeNew.zip
+
+disconnect
+
+quit
