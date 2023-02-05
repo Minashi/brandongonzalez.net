@@ -1,58 +1,52 @@
-div {
-    height: 400px;
-    width: 800px;
-    
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -200px;
-    margin-left: -400px;
-}
-
+/* Background */ 
 body {
-     background: rgb(238,174,202);
-background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 96%); 
+  background: rgb(174,223,238);
+  background: radial-gradient(circle, rgba(174,223,238,0.9808298319327731) 0%, 
+  rgba(148,187,233,0.9556197478991597) 100%);
 }
 
+/* container */ 
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+  margin: 0px;
+}
+
+/* My Name */ 
 h1 {
-    font-family: 'bdp clien', sans-serif;
-    font-size: 70px;
-    font-weight: 300;
-    padding: 0px;
-    border: 0px;
-    margin: 0px;
-    text-align: center;
+  font-family: 'bdp clien', sans-serif;
+  font-size: 55px;
+  font-weight: 300;
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+  text-align: center;
 }
 
-hr {
-    border-top: 1px solid black;
-    border-bottom: 0px;
-    width: 350px;
-}
-
-h2 {
-    font-size: 40px;
-    color: black;
-}
-
+/* image container */ 
 p {
-    letter-spacing: 5px;
+  text-align: center;
+  font-size: 30px;
 }
 
+/* bar */ 
+hr {
+  border-top: 1px solid black;
+  border-bottom: 0px;
+  width: 350px;
+}
+
+/* images */ 
 a {
-    font-size: 35px;
-    
- }
-
-a:visited { 
- text-decoration: none; 
- color: black; 
+  color: inherit;
+  padding: 2px;
+  text-decoration: none;
 }
 
-p3 {
-    font-size: 20px;
-}  
-
-p4 {
-    font-size: 20px;
+/* occupation */ 
+html {
+  font-family: sans-serif;
 }
