@@ -1,14 +1,141 @@
 <!DOCTYPE html>
-    <head>
-        <link rel="stylesheet" type="text/css"   href="/css/styles.css">
-    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    </head>
-    <body>
-        <div class="center">
-            <h1 style="text-align:center;">Brandon Gonzalez</h1>
-            <hr>
-           <h2 style="text-align:center;">Cybersecurity Student at USF</h2>
-	        <p style="text-align:center;"><a href="https://www.linkedin.com/in/bran-gonz/"><i class="fab fa-linkedin"></i></a><a href="https://github.com/Minashi"><i class="fab fa-github-square"></i></a></p>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <style>
+        .center-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .side-by-side {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .button-group form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 20px;
+            margin-bottom: 8px;
+        }
+        .table-container {
+            display: flex;
+            justify-content: center;
+        }
+        .interactive tr:hover {
+          background-color: #f2f2f2;
+        }
+        .sunken-panel {
+          height: 120px;
+          width: 270px;
+          margin: 0 auto;
+        }
+    </style>
+    <script src="/oneko/oneko.js" defer></script>
+</head>
+	<link rel="icon" href="/images/clippy.gif" type="image/x-icon">
+    
+    <div class="title-bar">
+      <div class="title-bar-text">BrandonGonzalez.net</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Restore"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    
+    <div class="center">
+        <h1 style="text-align:center;">Brandon Gonzalez</h1>
+        
+        <img src="images/bounceballoons.gif" width="636" height="43" alt="bounceballoons.gif (3750 bytes)" class="center-image">
+        
+        <h2 style="text-align:center;">Cybersecurity Student at USF</h2>
+        
+    <div class="side-by-side">
+        <div class="button-group">
+            <form action="BG_Resume.pdf">
+                <input type="submit" value="Resume" />
+            </form>
+
+            <form action="https://www.linkedin.com/in/bran-gonz/">
+                <input type="submit" value="Linkedin" />
+            </form>
+
+            <form action="https://github.com/minashi/">
+                <input type="submit" value="GitHub" />
+            </form>
         </div>
-    </body>
+
+        <div class="table-container">
+            <div class="sunken-panel" style="height: 120px; width: 240px;">
+              <table id="interactiveTable" class="interactive">
+                <thead>
+                  <tr>
+                    <th>Machine</th>
+                    <th>Date</th>
+                    <th>Difficulty</th>
+                    <th>OS</th>
+                    <th>Company</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- other rows... -->
+                  <tr data-url="/writeups/blocky">
+                    <td>blocky</td>
+                    <td>Date</td>
+                    <td>Easy</td>
+                    <td>Linux</td>
+                    <td>HTB</td>
+                  </tr>
+                  <tr data-url="/writeups/grandpa">
+                    <td>grandpa</td>
+                    <td>Date</td>
+                    <td>Easy</td>
+                    <td>Windows</td>
+                    <td>HTB</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+      <script>
+        document.querySelectorAll('table.interactive tbody tr').forEach(row => {
+          row.addEventListener('click', (event) => {
+            // Toggle 'highlighted' class
+            row.classList.toggle('highlighted');
+
+            // Navigate to URL
+            const url = row.getAttribute('data-url');
+            if (url) {
+              window.location.href = url;
+            }
+          });
+        });
+      </script>
+    </div>
+        
+		<img src="images/barraconstruction.gif" alt="barraconstruction.gif (5595 bytes)" width="574" height="51" class="center-image">
+        
+        <div class="side-by-side">
+            <img src="images/12.gif" width="500" height="124" alt="12.gif (39774 bytes)">
+            <img src="images/12.gif" width="500" height="124" alt="12.gif (39774 bytes)">
+        </div>
+        
+        <div class="side-by-side">
+        	<p align="center"><img src="images/98plusani.gif" alt="98plusani.gif (8405 bytes)" width="88" height="31"><img src="images/0.gif" alt="0.gif (7891 bytes)" width="88" height="31"><img src="images/1001ffbutton.gif" alt="1001ffbutton.gif (4151 bytes)" width="88" height="31"><img src="images/1001freenewfontsbutton.gif" alt="1001freenewfontsbutton.gif (3772 bytes)" width="88" height="31"><img src="images/addchannel.gif" alt="addchannel.gif (1768 bytes)" width="88" height="31"><img src="images/discord.gif" alt="discord.gif (10038 bytes)" width="88" height="31"><br>
+<img src="images/button-7.gif" alt="button-7.gif (1854 bytes)" width="88" height="31"><img src="images/classic_compatible.gif" alt="classic_compatible.gif (1055 bytes)" width="88" height="31"><img src="images/debian-powered.gif" alt="debian-powered.gif (2596 bytes)" width="88" height="31"><img src="images/DesignedByMacintosh.gif" alt="DesignedByMacintosh.gif (19960 bytes)" width="88" height="31"><img src="images/geocities_mirr.gif" alt="geocities_mirr.gif (1477 bytes)" width="88" height="31"><img src="images/ie_anim.gif" alt="ie_anim.gif (5432 bytes)" width="88" height="31"><br>
+<img src="images/notepad2.gif" alt="notepad2.gif (1154 bytes)" width="88" height="30"><img src="images/discord2.gif" alt="discord2.gif (1210 bytes)" width="88" height="31"><img src="images/click_here.gif" alt="click_here.gif (4079 bytes)" width="88" height="31"><img src="images/clickhere_blue.gif" alt="clickhere_blue.gif (2783 bytes)" width="88" height="31"><img src="images/clickhere_red.gif" alt="clickhere_red.gif (2783 bytes)" width="88" height="31"><img src="images/netscape2.gif" alt="netscape2.gif (9401 bytes)" width="88" height="31"><br>
+<img src="images/comdex4.gif" alt="comdex4.gif (840 bytes)" width="88" height="31"><img src="images/getwmp7.gif" alt="getwmp7.gif (13943 bytes)" width="89" height="32"><img src="images/dell_88x31.gif" alt="dell_88x31.gif (1928 bytes)" width="88" height="31"><img src="images/hotmail3.gif" alt="hotmail3.gif (1587 bytes)" width="88" height="31"><img src="images/ie_anim.gif" alt="ie_anim.gif (5432 bytes)" width="88" height="31"><img src="images/macos_mov.gif" alt="macos_mov.gif (6956 bytes)" width="88" height="31"><br>
+<img src="images/internet_now.gif" alt="internet_now.gif (8881 bytes)" width="88" height="31"><img src="images/macintoshwks.gif" alt="macintoshwks.gif (7350 bytes)" width="88" height="31"><img src="images/macmade-blkwtbrdrspin.gif" alt="macmade-blkwtbrdrspin.gif (11372 bytes)" width="88" height="31"><img src="images/macos_mov.gif" alt="macos_mov.gif (6956 bytes)" width="88" height="31"><img src="images/getwmp7.gif" alt="getwmp7.gif (13943 bytes)" width="89" height="32"><img src="images/macintoshwks.gif" alt="macintoshwks.gif (7350 bytes)" width="88" height="31"><br>
+<img src="images/got_html.gif" alt="got_html.gif (1142 bytes)" width="88" height="31"><img src="images/macos8.gif" alt="macos8.gif (2156 bytes)" width="88" height="31"><img src="images/macosmade.gif" alt="macosmade.gif (7545 bytes)" width="80" height="32"><img src="images/madewithamiga2.gif" alt="madewithamiga2.gif (3740 bytes)" width="88" height="31"><img src="images/microsoft3.gif" alt="microsoft3.gif (14942 bytes)" width="88" height="31"><img src="images/netscape.gif" alt="netscape.gif (40190 bytes)" width="88" height="31"><br>
+<img src="images/microsoftlogo.gif" alt="microsoftlogo.gif (14871 bytes)" width="88" height="31"><img src="images/netscape.gif" alt="netscape.gif (40190 bytes)" width="88" height="31"><img src="images/norton.gif" alt="norton.gif (8192 bytes)" width="88" height="31"><img src="images/members-choice.gif" alt="members-choice.gif (921 bytes)" width="88" height="31"><img src="images/office97.gif" alt="office97.gif (6077 bytes)" width="88" height="31"><img src="images/internet_now.gif" alt="internet_now.gif (8881 bytes)" width="88" height="31"><br>
+<img src="images/darwin.gif" alt="darwin.gif (970 bytes)" width="89" height="31"><img src="images/winamp5.gif" alt="winamp5.gif (8577 bytes)" width="88" height="31"><a href="http://www.microsoft.com/frontpage/"><img src="images/frontpag.gif" border="0" width="88" height="31"></a><img src="images/netscape.gif" alt="netscape.gif (40190 bytes)" width="88" height="31"><img src="images/microsoft.gif" alt="microsoft.gif (14687 bytes)" width="100" height="31"><img src="images/addchannel.gif" alt="addchannel.gif (1768 bytes)" width="88" height="31"></p>
+        </div>
+    </div>
+</body>
 </html>
